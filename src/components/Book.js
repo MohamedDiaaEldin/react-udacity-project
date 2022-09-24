@@ -1,8 +1,11 @@
 
 import { useState } from "react"
 
-const Book = ({backgroundImageURL, bookTitle, bookAuthors})=>{
+const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, ChangeShelf})=>{
     const [bookState, setBookstate] = useState('none')
+    const changeHandler = (e)=>{            
+      ChangeShelf(id, e.target.value)
+    }
     return(
         <li>
         <div className="book">
@@ -17,7 +20,7 @@ const Book = ({backgroundImageURL, bookTitle, bookAuthors})=>{
               }}
             ></div>
             <div className="book-shelf-changer">
-              <select>
+              <select onClick={changeHandler}>
                 <option value="none" disabled>
                   Move to...
                 </option>
