@@ -1,11 +1,12 @@
 
-import { useState } from "react"
-
-const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, ChangeShelf})=>{
-    const [bookState, setBookstate] = useState('none')
-    const changeHandler = (e)=>{            
-      ChangeShelf(id, e.target.value)
+const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, updateShelf})=>{    
+    const changeHandler = (e)=>{         
+      const toShelf = e.target.value
+      if(shelf !== toShelf)   
+      updateShelf(id, shelf,  toShelf)
+      
     }
+    
     return(
         <li>
         <div className="book">

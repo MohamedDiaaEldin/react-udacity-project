@@ -1,9 +1,7 @@
 import Book from "./Book";
 
-const Shelf = ({ title, books, updateShelf})=>{
-    const ChangeShelf = (bookId, toShelf)=>{
-       updateShelf(bookId, toShelf)
-    }
+const Shelf = ({id, title, books, updateShelf})=>{
+
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
@@ -11,12 +9,12 @@ const Shelf = ({ title, books, updateShelf})=>{
           <ol className="books-grid">
             {books.map((book) => (
               <Book
-                ChangeShelf = {ChangeShelf}
                 bookTitle={book.title}
                 id={book.id}
                 key={book.id}
-                shelf={book.shelf}
+                shelf={id}
                 backgroundImageURL={book.imageLinks.smallThumbnail}
+                updateShelf={updateShelf}
                 bookAuthors={book.authors.toString()}                
               />
             ))}
