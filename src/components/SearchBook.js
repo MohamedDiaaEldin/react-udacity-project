@@ -4,6 +4,7 @@ import "../App.css";
 import Shelf from './Shelf';
 import {useState} from 'react'
 import { search } from '../BooksAPI';
+import { update } from '../BooksAPI';
 
 const SearchBook = ()=>{
   const [books, setBooks] = useState([])
@@ -24,6 +25,7 @@ const SearchBook = ()=>{
   }
   const updateShelf = async ( bookId ,fromShelf,  toShelf)=>{
     // updata in the database 
+    update(bookId, toShelf)    
   } 
   
     return (
