@@ -7,15 +7,15 @@ const Shelf = ({id, title, books, updateShelf})=>{
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {books.map((book) => (
+            { books.length > 0 && books.map((book) => (
               <Book
                 bookTitle={book.title}
                 id={book.id}
                 key={book.id}
                 shelf={id}
-                backgroundImageURL={book.imageLinks.smallThumbnail}
+                backgroundImageURL={ book.imageLinks && book.imageLinks.smallThumbnail ? book.imageLinks.smallThumbnail:""}
                 updateShelf={updateShelf}
-                bookAuthors={book.authors.toString()}                
+                bookAuthors={book.authors ? book.authors.toString():""}                
               />
             ))}
           </ol>

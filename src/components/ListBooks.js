@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import "../App.css";
-import { getAll , update} from '../BooksAPI';
+import { getAll , update, search} from '../BooksAPI';
 import Shelf from './Shelf';
 
 const ListBooks = ()=>{
@@ -96,6 +96,24 @@ const ListBooks = ()=>{
     }
     return [books, setter]
   }
+
+
+
+  // const trySearch = async (word)=>{
+  //   const res = await search(word, 20)
+  //   // res[0].shelf = 'read'
+  //   console.log('response is ', res)
+  //   // console.log(res[0].shelf)
+  // }
+  // trySearch('react')
+
+  // const tryUpdate = async ()=>{    
+  //   const res = await update("PKpPCwAAQBAJ", 'read')
+  //   console.log(res)
+  // }
+  // tryUpdate()
+
+  
     return (
       <div className="list-books">
         <div className="list-books-title">

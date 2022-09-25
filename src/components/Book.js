@@ -1,3 +1,4 @@
+import "../App.css";
 
 const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, updateShelf})=>{    
     const changeHandler = (e)=>{         
@@ -21,7 +22,7 @@ const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, updateShel
               }}
             ></div>
             <div className="book-shelf-changer">
-              <select onClick={changeHandler}>
+              <select  onClick={changeHandler}>
                 <option value="none" disabled>
                   Move to...
                 </option>
