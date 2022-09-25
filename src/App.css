@@ -178,3 +178,7 @@ body,
   text-align: center;
   font-size: 0.8em;
 }
+
+option::after{
+  background-color: red;
+}

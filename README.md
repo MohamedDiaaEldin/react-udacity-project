@@ -2,19 +2,27 @@
 
 ### user can search  for a book by name and select it to be in "want to read" shelf , "read" shelf or "currenly reading shelf"
 
----
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- nodejs
+- npm 
+
+
+
+### Installing
+
+from project directory
 ```
-## Available start Scripts
-In the project directory, you can run:
-### `npm start`
+npm install
+```
 
+### running 
+```
+npm run start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 

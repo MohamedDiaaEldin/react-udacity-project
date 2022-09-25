@@ -1,13 +1,16 @@
 import "../App.css";
-
+import { useState } from "react";
 const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, updateShelf})=>{    
-    const changeHandler = (e)=>{         
-      const toShelf = e.target.value
-      if(shelf !== toShelf)   
-      updateShelf(id, shelf,  toShelf)
-      
-    }
-    
+  const [selected, setSelected] = useState(shelf)
+  
+  const clickHandler = (e) => {
+    const toShelf = e.target.value;
+    if (shelf !== toShelf) updateShelf(id, shelf, toShelf);
+  };
+  
+  const changeHandler = (e) => {
+    setSelected(e.target.value);
+  };
     return(
         <li>
         <div className="book">
@@ -22,16 +25,17 @@ const Book = ({id, shelf, backgroundImageURL, bookTitle, bookAuthors, updateShel
               }}
             ></div>
             <div className="book-shelf-changer">
-              <select  onClick={changeHandler}>
-                <option value="none" disabled>
+              <select onChange={changeHandler} value={selected} onClick={clickHandler}>
+                <option value="n" disabled>
                   Move to...
                 </option>
                 <option value="currentlyReading">
                   Currently Reading
                 </option>
-                <option value="wantToRead">Want to Read</option>
+                
+                <option  value="wantToRead">Want to Read</option>
                 <option value="read">Read</option>
-                <option value="none">None</option>
+                <option  value="none">None</option>
               </select>
             </div>
           </div>
